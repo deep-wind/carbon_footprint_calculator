@@ -341,7 +341,7 @@ try:
     
     def make_pie_pdf(pdfname):
         c=canvas.Canvas(pdfname, pagesize=portrait(letter))
-        logo=r"C:\Users\PRAMILA\.spyder-py3\project\carbon_footprint-master\pi.png"
+        logo="pi.png"
         c.setFont('Helvetica-Bold', 16, leading=None)
         c.drawCentredString(300,600,"Your carbon consumption: by category")
         c.drawImage(logo, 0, 200, width=600,height=300, preserveAspectRatio=True)
