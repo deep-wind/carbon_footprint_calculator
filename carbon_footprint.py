@@ -49,7 +49,7 @@ try:
     st.sidebar.markdown("<h1 style='text-align: center; color: black;'>🧭 Navigation Bar 🧭</h1>", unsafe_allow_html=True)
     nav = st.sidebar.radio("",["Home 🏡","Prediction📟"])
     if nav == "Home 🏡":
-      set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
+      set_png_as_page_bg("back.jpg")
       st.markdown("<h1 style='text-align: center;font-family:times new roman;'>CARBON FOOTPRINT CALCULATOR</h1>", unsafe_allow_html=True)
       st.markdown("<h1 style='text-align: center;font-family:times new roman;'>Reduce your carbon footprint!</h1>", unsafe_allow_html=True)
 
@@ -179,7 +179,7 @@ try:
                 
     def cover_page(pdfname, surveyname, company, date, sampleid):
         c=canvas.Canvas(pdfname, pagesize=portrait(letter))
-        c.drawImage(r"C:\Users\PRAMILA\Downloads\back.jpg", 0, 200, width=700,height=400, preserveAspectRatio=False)
+        c.drawImage("back.jpg", 0, 200, width=700,height=400, preserveAspectRatio=False)
         c.setFont('Helvetica-Bold', 16, leading=None)
         c.drawCentredString(300,460,"Carbon Footprint Report")
         c.setFont('Helvetica', 16, leading=None)
@@ -350,7 +350,7 @@ try:
     
     def make_lastpage(pdfname):
         c=canvas.Canvas(pdfname, pagesize=portrait(letter))
-        c.drawImage(r"C:\Users\PRAMILA\Downloads\back.jpg", 0, 200, width=700,height=400, preserveAspectRatio=False)
+        c.drawImage("back.jpg", 0, 200, width=700,height=400, preserveAspectRatio=False)
         c.setFont('Helvetica-Bold', 16, leading=None)
         c.drawCentredString(300,430,"Thanks for taking this survey!")
         c.drawCentredString(300, 400, "Reduce your carbon footprint!")
