@@ -1,4 +1,3 @@
-pygame
 reportlab
 matplotlib
 numpy 
