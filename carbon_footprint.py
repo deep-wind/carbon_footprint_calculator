@@ -211,7 +211,7 @@ try:
         ax.set_ylabel('Scores')
         ax.set_title('Scores by label')
         ax.set_xticks(x)
-        ax.set_xticklabels(labels, rotation='horizontal') #rotation='vertical', fontsize='x-small',
+        ax.set_xticklabels(labels, rotation='vertical') #rotation='vertical', fontsize='x-small',
         ax.legend()
     
         def autolabel(rects):
