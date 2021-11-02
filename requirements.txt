@@ -5,3 +5,4 @@ numpy
 textblob
 PyPDF2
 pandas
+base64
