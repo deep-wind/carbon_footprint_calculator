@@ -15,6 +15,10 @@ import pandas as pd
 from PIL import Image
 import streamlit as st
 
+st.set_page_config(
+page_title="Carbon Footprint Calculator",
+page_icon="🌎"
+)
 
 def get_base64_of_bin_file(bin_file):
     """
