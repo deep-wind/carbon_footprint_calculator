@@ -497,7 +497,7 @@ try:
             ##              Now create the PDF                    ##
             ########################################################
     
-     
+            st.write("hii1")
             print(footprintbytype[3])
             # individual_means = ['Electricity consumption (kwh * 1000)', '# of flights per year', '# of driven miles/year (thousands)', '# of uber trips/year', 'food choice (tons of CO2 emissions/year)']
             if answer_4 == 'yes' and answer_6 == 'no':
@@ -510,7 +510,7 @@ try:
                 individual_means = [(int(answer_2)/0.1327)*12/1000, int(answer_3), 0, int(answer_8)*12, footprintbytype[3]/1000]
             
             individual_means=list(map(int,individual_means))
-            
+            st.write("hii1")
             #['electric (kg Co2/year)', 'flight (kg Co2/year)', 'transportation (kg Co2/year)', 'food (kg Co2/year)', 'retail (kg Co2/year)']
             truthlist=[False, False, False, False, False, False, False, False, False, False, False]
             cover_page("1.pdf", email, 'User', str(datetime.datetime.now()), '100')
@@ -521,7 +521,7 @@ try:
             make_lastpage("5.pdf")
             pdflist=["1.pdf","2.pdf","3.pdf","4.pdf","5.pdf"]
             merge_pdfs(pdflist)
-        
+            st.write("hii1")
             st.markdown(get_binary_file_downloader_html("final_report.pdf", 'Final Report📝 '), unsafe_allow_html=True) 
    
 except:
