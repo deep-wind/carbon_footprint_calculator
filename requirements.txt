@@ -1,3 +1,4 @@
+pip
 reportlab
 matplotlib
 numpy 
