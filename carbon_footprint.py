@@ -513,21 +513,15 @@ try:
    
             #['electric (kg Co2/year)', 'flight (kg Co2/year)', 'transportation (kg Co2/year)', 'food (kg Co2/year)', 'retail (kg Co2/year)']
             truthlist=[False, False, False, False, False, False, False, False, False, False, False]
-            st.write("1")
             cover_page("1.pdf", email, 'User', str(datetime.datetime.now()), '100')
             make_graphs(individual_means, footprintbytype)
             make_bar_pdf("2.pdf",'bar.png')
-            st.write("2")
             make_pie_pdf("3.pdf")
-            st.write("3")
             improvement_pdf("4.pdf", truthlist)
-            st.write("4")
             make_lastpage("5.pdf")
-            st.write("5")
             pdflist=["1.pdf","2.pdf","3.pdf","4.pdf","5.pdf"]
             merge_pdfs(pdflist)
-            st.write("hii1")
-            st.markdown(get_binary_file_downloader_html("final_report.pdf", 'Final Report📝 '), unsafe_allow_html=True) 
+            st.markdown(get_binary_file_downloader_html("final_report.pdf", 'Your Final Report📝 '), unsafe_allow_html=True) 
    
 except:
   # Prevent the error from propagating into your Streamlit app.
