@@ -220,7 +220,7 @@ try:
                 height = rect.get_height()
                 ax.annotate('{}'.format(height),
                             xy=(rect.get_x() + rect.get_width() / 2, height),
-                            xytext=(0, 3),  # 3 points vertical offset
+                            xytext=(0, 2),  # 3 points vertical offset
                             textcoords="offset points",
                             ha='center', va='bottom')
     
