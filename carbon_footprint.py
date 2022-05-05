@@ -50,7 +50,7 @@ def set_png_as_page_bg(png_file):
     return
 
 try:
-    st.sidebar.markdown("<h1 style='text-align: center; color: black;'>🧭 Navigation Bar 🧭</h1>", unsafe_allow_html=True)
+    st.sidebar.markdown("<h1 style='text-align: center; color: black;'>🧭 Navigation Bar🧭</h1>", unsafe_allow_html=True)
     nav = st.sidebar.radio("",["Home 🏡","Prediction📟"])
     if nav == "Home 🏡":
       set_png_as_page_bg("back.jpg")
