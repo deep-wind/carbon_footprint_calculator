@@ -1,5 +1,4 @@
 pip
-click<=8.0.4
 reportlab
 matplotlib
 numpy 
