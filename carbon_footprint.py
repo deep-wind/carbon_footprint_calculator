@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import streamlit as st
+from web3 import Web3
 
 st.set_page_config(
 page_title="Carbon Footprint Calculator",
@@ -51,12 +52,41 @@ def set_png_as_page_bg(png_file):
 
 try:
     st.sidebar.markdown("<h1 style='text-align: center; color: black;'>🧭 Navigation Bar🧭</h1>", unsafe_allow_html=True)
-    nav = st.sidebar.radio("",["Home 🏡","Prediction📟"])
+    nav = st.sidebar.radio("",["Home 🏡","Prediction📟","Donate"])
     if nav == "Home 🏡":
       set_png_as_page_bg("back.jpg")
       st.markdown("<h1 style='text-align: center;font-family:times new roman;'>CARBON FOOTPRINT CALCULATOR</h1>", unsafe_allow_html=True)
       st.markdown("<h1 style='text-align: center;font-family:times new roman;'>Reduce your carbon footprint!</h1>", unsafe_allow_html=True)
 
+    
+    if nav == "Donate":
+      #set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
+        st.markdown("<h1 style='text-align: center;font-family:times new roman;'>CARBON FOOTPRINT CALCULATOR</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center;font-family:times new roman;'>Donate</h1>", unsafe_allow_html=True)
+        web3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+        st.write(web3.isConnected())
+        account1="0x525E00CB588Faf1Cb59644f1eDBC1c5049fAE71b"
+        account2="0x5A4527Ce9764D8F287c344c0BCdd8e3F9cAAe844"
+        st.write(web3.eth.get_balance(account1))
+        
+        privatekey="21d836a4415ccf11db9ccd6bbc929148bfbe000f4d073011e156fe245ed869e2"
+        nonce=web3.eth.getTransactionCount(account1)
+        
+        tx={
+            'nonce': nonce,                      # transaction count
+            'to': account2,              # who to send the ETH to
+            'value': web3.toWei(1, 'ether'),       # the amount to transfer
+            'gas':21000,
+            'gasPrice': web3.toWei('50', 'gwei')        # get the price of gas
+        
+            }
+        #signed_tx = w3.eth.account.sign_transaction(tx,account1_private_key)
+        signed_tx = web3.eth.account.signTransaction(tx,privatekey)
+        tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
+        st.write(web3.toHex(tx_hash))
+        st.write(web3.eth.get_balance(account1))
+        st.write(web3.eth.get_balance(account2))
+    
     
     def clean_answer(answer):
         answer=answer.replace(' ','').replace('$','')
