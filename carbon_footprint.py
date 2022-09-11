@@ -63,7 +63,7 @@ try:
       #set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
         st.markdown("<h1 style='text-align: center;font-family:times new roman;'>CARBON FOOTPRINT CALCULATOR</h1>", unsafe_allow_html=True)
         st.markdown("<h1 style='text-align: center;font-family:times new roman;'>Donate</h1>", unsafe_allow_html=True)
-        web3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+        web3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/47f01210553f44019e829a5534534aaa'))
         st.write(web3.isConnected())
         account1="0x525E00CB588Faf1Cb59644f1eDBC1c5049fAE71b"
         account2="0x5A4527Ce9764D8F287c344c0BCdd8e3F9cAAe844"
