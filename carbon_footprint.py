@@ -60,6 +60,7 @@ try:
 
     
     if nav == "Donate":
+        st.button("DONATE")
       #set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
 
     
