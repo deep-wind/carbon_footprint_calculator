@@ -61,15 +61,13 @@ try:
     
     if nav == "Donate":
       #set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
-        st.markdown("<h1 style='text-align: center;font-family:times new roman;'>CARBON FOOTPRINT CALCULATOR</h1>", unsafe_allow_html=True)
-        st.markdown("<h1 style='text-align: center;font-family:times new roman;'>Donate</h1>", unsafe_allow_html=True)
         web3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/47f01210553f44019e829a5534534aaa'))
-        st.write(web3.isConnected())
-        account1="0x5A4527Ce9764D8F287c344c0BCdd8e3F9cAAe844"
-        account2="0x19288ACB9D45a7bfa8836d523C2a4ad36f81C8ff"
+        print(web3.isConnected())
+        account1="0x19288ACB9D45a7bfa8836d523C2a4ad36f81C8ff"
+        account2="0x525E00CB588Faf1Cb59644f1eDBC1c5049fAE71b"
         st.write(web3.eth.get_balance(account1))
         
-        privatekey="b51b9a78a8858e51431c2b7e080fec35b9d1d5af0cb9dd2d02dc8f18838f9392"
+        privatekey="153126bfe2fd9323f2d2aea5454090a4266815415d431c4c907f79d30fe29972"
         nonce=web3.eth.getTransactionCount(account1)
         
         tx={
