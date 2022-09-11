@@ -61,29 +61,7 @@ try:
     
     if nav == "Donate":
       #set_png_as_page_bg(r"C:\Users\PRAMILA\Downloads\back.jpg")
-        web3 = Web3(Web3.HTTPProvider('https://ropsten.infura.io/v3/47f01210553f44019e829a5534534aaa'))
-        print(web3.isConnected())
-        account1="0x19288ACB9D45a7bfa8836d523C2a4ad36f81C8ff"
-        account2="0x525E00CB588Faf1Cb59644f1eDBC1c5049fAE71b"
-        st.write(web3.eth.get_balance(account1))
-        
-        privatekey="153126bfe2fd9323f2d2aea5454090a4266815415d431c4c907f79d30fe29972"
-        nonce=web3.eth.getTransactionCount(account1)
-        
-        tx={
-            'nonce': nonce,                      # transaction count
-            'to': account2,              # who to send the ETH to
-            'value': web3.toWei(1, 'ether'),       # the amount to transfer
-            'gas':21000,
-            'gasPrice': web3.toWei('50', 'gwei')        # get the price of gas
-        
-            }
-        #signed_tx = w3.eth.account.sign_transaction(tx,account1_private_key)
-        signed_tx = web3.eth.account.signTransaction(tx,privatekey)
-        tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
-        st.write(web3.toHex(tx_hash))
-        st.write(web3.eth.get_balance(account1))
-        st.write(web3.eth.get_balance(account2))
+
     
     
     def clean_answer(answer):
